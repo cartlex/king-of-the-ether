@@ -1,20 +1,11 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
+pragma solidity 0.8.19;
 
 import "forge-std/Test.sol";
 import {KingOfTheEther} from "../../contracts/KingOfTheEther/KingOfTheEther.sol";
+import {Errors} from "../../contracts/utils/Errors.sol";
 
-error ZeroValue();
-error NotStaker();
-error AlreadyEnded();
-error NotStarted();
-error IncorrectStartAmount();
-error NotEnded();
-error FailedWinnerWithdrawal();
-error FailedUserWithdrawal();
-error NotEnoughToStake();
-
-contract KingOfTheEtherTest is Test {
+contract KingOfTheEtherTest is Test, Errors {
     event Transfer(address indexed sender, uint indexed value);
 
     KingOfTheEther public kingOfTheEther;

@@ -2,6 +2,7 @@
 pragma solidity 0.8.19;
 
 import {Ownable2Step} from "@openzeppelin/contracts/access/Ownable2Step.sol";
+import {Errors} from "../utils/Errors.sol";
 
 /**
  * @title `KingOfTheEther` contract for staking ETH.
@@ -9,18 +10,8 @@ import {Ownable2Step} from "@openzeppelin/contracts/access/Ownable2Step.sol";
  * @notice You can use this contract for only the most basic simulation.
  * @dev All function calls are currently implemented without side effects.
  */
-contract KingOfTheEther is Ownable2Step {
-    error ZeroValue();
-    error NotStaker();
-    error AlreadyEnded();
-    error NotStarted();
-    error IncorrectStartAmount();
-    error NotEnded();
-    error FailedWinnerWithdrawal();
-    error FailedUserWithdrawal();
-    error NotAnOwner();
-    error NotEnoughToStake();
-
+contract KingOfTheEther is Ownable2Step, Errors {
+    
     event UserWithdrawal(
         address indexed staker,
         uint indexed amount,

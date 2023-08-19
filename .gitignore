@@ -12,3 +12,8 @@ docs/
 
 # Dotenv file
 .env
+
+.vscode/
+lib/
+
+.DS_Store
